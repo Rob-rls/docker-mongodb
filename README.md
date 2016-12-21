@@ -20,16 +20,16 @@ $ docker build -t frodenas/mongodb .
 
 ### Run the image
 
-To run the image and bind to host port 27017:
+To run the image and bind to host port 27018:
 
 ```
-$ docker run -d --name mongodb -p 27017:27017 frodenas/mongodb
+$ docker run -d --name mongodb -p 27018:27018 frodenas/mongodb
 ```
 
 If you want also to expose the MongoDB http interface, you will need also to expose port 28017:
 
 ```
-$ docker run -d --name mongodb -p 27017:27017 -p 28017:28017 frodenas/mongodb --httpinterface
+$ docker run -d --name mongodb -p 27018:27018 -p 28017:28017 frodenas/mongodb --httpinterface
 ```
 
 The first time you run your container,  a new user `mongo` with all privileges will be created with a random password.
@@ -62,7 +62,7 @@ On this example we will preset our custom username and password:
 ```
 $ docker run -d \
     --name mongodb \
-    -p 27017:27017 \
+    -p 27018:27018 \
     -e MONGODB_USERNAME=myusername \
     -e MONGODB_PASSWORD=mypassword \
     frodenas/mongodb
@@ -80,7 +80,7 @@ On this example we will preset our custom username and password and we will crea
 ```
 $ docker run -d \
     --name mongodb \
-    -p 27017:27017 \
+    -p 27018:27018 \
     -e MONGODB_USERNAME=myusername \
     -e MONGODB_PASSWORD=mypassword \
     -e MONGODB_DBNAME=mydb \
@@ -93,7 +93,7 @@ When you run the container, it will start the MongoDB server without any argumen
 just add them to the `run` command:
 
 ```
-$ docker run -d --name mongodb -p 27017:27017 frodenas/mongodb --smallfiles
+$ docker run -d --name mongodb -p 27018:27018 frodenas/mongodb --smallfiles
 ```
 
 #### Persistent data
@@ -105,7 +105,7 @@ container's `/data` volume to a volume on the host so the data becomes independe
 $ mkdir -p /tmp/mongodb
 $ docker run -d \
     --name mongodb \
-    -p 27017:27017 \
+    -p 27018:27018 \
     -v /tmp/mongodb:/data \
     frodenas/mongodb
 ```

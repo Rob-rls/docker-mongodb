@@ -11,7 +11,7 @@ fi
 
 # Start MongoDB service
 /usr/bin/mongod --dbpath /data --nojournal &
-while ! nc -vz localhost 27017; do sleep 1; done
+while ! nc -vz localhost 27018; do sleep 1; done
 
 # Create User
 echo "Creating user: \"$USER\"..."
