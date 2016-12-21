@@ -1,3 +1,7 @@
+This is a docker image that runs MongoDB on port 27018.  <br>
+Modified from the original at https://github.com/frodenas/docker-mongodb
+
+
 # MongoDB Dockerfile
 
 A Dockerfile that produces a Docker Image for [MongoDB](http://www.mongodb.org/).
